@@ -1,0 +1,9 @@
+@tailwind components;
+
+@layer components {
+	.workflow-container {
+		.main-content {
+			@apply h-[65vh] overflow-y-auto flex items-start;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+@tailwind components;
+
+@layer components {
+	header {
+		@apply py-3 px-4 border-b border-border-color flex items-center justify-between;
+
+		svg {
+			@apply w-6 h-6;
+		}
+
+		.navigation {
+			@apply flex items-center gap-3;
+			ul {
+				@apply flex items-center gap-1;
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+@tailwind components;
+@layer components {
+	.custom-table {
+		@apply relative border-collapse table-fixed border border-border-color;
+		thead {
+			@apply h-[25px] sticky top-0 left-0  bg-background;
+		}
+		.table-heading-col {
+			@apply flex justify-between items-center;
+			span {
+				@apply truncate;
+			}
+			svg {
+				@apply min-w-4;
+			}
+		}
+
+		th,
+		td {
+			@apply truncate px-4 w-auto border-b border-border-color;
+		}
+		td,
+		th {
+			@apply border border-t-0 border-border-color;
+		}
+		tr {
+			@apply table table-fixed w-full;
+		}
+		tbody {
+			@apply block overflow-y-auto h-[167px];
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+	.side-panel {
+		@apply px-4 py-3 border-r border-border-color h-full w-[250px];
+	}
+}

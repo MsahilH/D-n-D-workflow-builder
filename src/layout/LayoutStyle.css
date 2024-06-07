@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+	.container {
+		@apply flex items-start;
+	}
+}

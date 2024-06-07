@@ -1,0 +1,13 @@
+@tailwind components;
+@layer components {
+	.dashboard-container {
+		@apply px-6 py-5 mx-auto w-[80%];
+
+		.header {
+			@apply w-full flex justify-end gap-4;
+			input {
+				@apply w-[230px];
+			}
+		}
+	}
+}
