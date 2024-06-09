@@ -14,7 +14,6 @@ const Footer: React.FC = () => {
 
 	const exportCSV = () => {
 		if (selectedNodeData?.data) {
-			console.log("this is data",typeof selectedNodeData?.data);
 			const csvData = convertToCSV(selectedNodeData.data);
 			const blob = new Blob([csvData], {
 				type: 'text/csv;charset=utf-8;',

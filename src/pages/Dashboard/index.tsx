@@ -71,7 +71,6 @@ const Dashboard = () => {
     }
   };
 
-  console.log("this is workflows", workflows);
   const handleInputChange = (e: any) => {
     setUpdateError("");
     setNewName(e.target.value);
@@ -119,7 +118,6 @@ const Dashboard = () => {
           placeholder="New Workflow Name"
           value={newWorkflowName}
           onChange={(e) => {
-            console.log("this is event.", e.target.value);
             setNewWorkflowName(e.target.value);
           }}
           onKeyDown={handleKeyDown}

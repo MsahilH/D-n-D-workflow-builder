@@ -48,12 +48,11 @@ const FilterNode = ({ data, ...res }: any) => {
     (state: RootState) => state.nodes.nodesData
   );
   const currentNode = nodeData.find((node: any) => node.id === res.id);
-  console.log("currentNode currentNode123", currentNode);
   const [filterData, setFilterData] = useState<processData>(
     currentNode?.filterData || {
-      column: "Select Column",
-      condition: "Select Condition",
-      value: "Select Value",
+      column: "select column",
+      condition: "condition",
+      value: "select Value",
     }
   );
   const [columnsOptions, setColumnsOptions] = useState<ColumnOption[]>([]);
@@ -122,11 +121,12 @@ const FilterNode = ({ data, ...res }: any) => {
   }, [currentNode]);
 
   const runFilter = () => {
+    const { column, condition, value } = filterData;
     let allFilters: any[] = [];
-    let nodeId = currentNode?.id;
+    let nodeId = currentNode?.data?.id;
     while (nodeId != null) {
-      const currentId = nodeId;
-      const currentNodeData = nodeData.find(
+      let currentId = nodeId;
+      let currentNodeData = nodeData.find(
         (d: { id: any }) => d.id === currentId
       );
       allFilters.push(currentNodeData?.filterData);
@@ -135,6 +135,7 @@ const FilterNode = ({ data, ...res }: any) => {
     allFilters = allFilters.filter(function (element) {
       return element != undefined;
     });
+    allFilters.push(filterData);
     let hasError = false;
     allFilters.forEach(({ column, condition, value }) => {
       if (
@@ -155,7 +156,7 @@ const FilterNode = ({ data, ...res }: any) => {
       let isFiltered = true;
       allFilters.forEach(({ column, condition, value }) => {
         switch (condition) {
-          case Conditions.IS_EQUAL_TO:
+          case Conditions.IS_EQUAL:
             return (isFiltered = isFiltered && row[column] === value);
           case Conditions.IS_NOT_EQUAL_TO:
             return (isFiltered = isFiltered && row[column] !== value);
