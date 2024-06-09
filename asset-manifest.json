@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/D-n-D-workflow-builder/static/css/main.14356d29.css",
+    "main.js": "/D-n-D-workflow-builder/static/js/main.9c93507e.js",
+    "static/js/453.3c5db6d2.chunk.js": "/D-n-D-workflow-builder/static/js/453.3c5db6d2.chunk.js",
+    "static/media/logo.svg": "/D-n-D-workflow-builder/static/media/logo.6f3e5790f2c1f24846b6773ecf42c5bf.svg",
+    "index.html": "/D-n-D-workflow-builder/index.html",
+    "static/media/arrow.svg": "/D-n-D-workflow-builder/static/media/arrow.3821be6d864685ecda4ee1995542abfe.svg",
+    "main.14356d29.css.map": "/D-n-D-workflow-builder/static/css/main.14356d29.css.map",
+    "main.9c93507e.js.map": "/D-n-D-workflow-builder/static/js/main.9c93507e.js.map",
+    "453.3c5db6d2.chunk.js.map": "/D-n-D-workflow-builder/static/js/453.3c5db6d2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14356d29.css",
+    "static/js/main.9c93507e.js"
+  ]
+}
