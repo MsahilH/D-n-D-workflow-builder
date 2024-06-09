@@ -65,9 +65,15 @@ const FlowCanvas = () => {
       setEdges((eds) => {
         const newEdges = addEdge({ ...params, animated: true }, eds);
 
-        const sourceNode = nodesData.find((node) => node.id === params.source);
+        const sourceNode = nodes.find((node) => node.id === params.source);
 
-        const targetNode = nodesData.find((node) => node.id === params.target);
+        let targetNode;
+				for (let i = 0; i < nodesData.length; i++) {
+				  if (nodesData[i].id === params.target) {
+					targetNode = nodesData[i];
+					break;
+				  }
+				}
 
         if (sourceNode && targetNode) {
           dispatch(
