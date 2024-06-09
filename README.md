@@ -1,6 +1,6 @@
 # Workflow Builder
 
-A React and Tailwind CSS application for building and managing workflows. Users can create new workflows, add CSV files, connect nodes, and manage workflow data visually.
+Workflow Builder, an intuitive and dynamic application designed to empower users to create, edit, and visualize complex workflows with ease. Whether you're dealing with large datasets or intricate processes, our tool offers a seamless drag-and-drop interface to build workflows consisting of multiple steps (nodes) and the relationships (edges) between them. From filtering and finding data to reducing, and applying various array methods, There is facility to save your multiple workflows and you can get back even after reload.
 
 # Features
 
