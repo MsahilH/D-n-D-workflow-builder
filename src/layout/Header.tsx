@@ -3,7 +3,7 @@ import './HeaderStyle.css';
 
 import { ReactComponent as Logo } from 'assets/svg/logo.svg';
 import Button from 'components/Button';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { saveWorkflow } from 'store/workflowSlice';
 import { getState } from 'store/store';
@@ -11,6 +11,7 @@ import { getState } from 'store/store';
 const Header = () => {
 	const params = useParams();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const handleSaveWorkflow = () => {
 		const nodes = getState().nodes;
 		const edges = getState().edges;
@@ -24,12 +25,17 @@ const Header = () => {
 			<div className="navigation">
 				<Logo />
 				<ul>
-					<li>
+				<li>
+						<Button onClick={()=>{
+							navigate(`/`);
+						}}>Home</Button>
+					</li>
+					{/* <li>
 						<Button>VIEW</Button>
 					</li>
 					<li>
 						<Button>HELP</Button>
-					</li>
+					</li> */}
 				</ul>
 			</div>
 			{params.workflowId && (

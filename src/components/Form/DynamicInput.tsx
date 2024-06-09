@@ -36,6 +36,7 @@ const DynamicInput: React.FC<InputProps> = (props) => {
 						placeholder={props.placeholder}
 						value={props.value}
 						onChange={props.onChange}
+						onKeyDown={props.onKeyDown}
 						className={`border text-font-color bg-primary ${
 							props.error
 								? 'border-red-500'

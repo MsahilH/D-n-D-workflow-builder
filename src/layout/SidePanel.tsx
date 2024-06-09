@@ -52,7 +52,7 @@ const SidePanel = () => {
 				<div className="flex flex-col gap-5">
 					<Button
 						className="text-left"
-						onClick={() => handleAddNode('FilterNode')}
+						onClick={() => handleAddNode('FindNode')}
 					>
 						Add Find Node
 					</Button>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './FooterStyle.css';
 import Table from 'components/Table';
 import { useSelector } from 'react-redux';
@@ -25,11 +25,11 @@ const Footer: React.FC = () => {
 
 	const exportJSON = () => {
 		if (selectedNodeData?.data) {
-			const csvData = convertToCSV(selectedNodeData.data);
-			const blob = new Blob([csvData], {
-				type: 'text/csv;charset=utf-8;',
+			const jsonData = JSON.stringify(selectedNodeData.data, null, 2); 
+			const blob = new Blob([jsonData], {
+				type: 'application/json;charset=utf-8;',
 			});
-			saveAs(blob, 'node_data.csv');
+			saveAs(blob, 'node_data.json');
 		}
 	};
 
@@ -39,13 +39,13 @@ const Footer: React.FC = () => {
 				<h4>OUTPUT</h4>
 				{!!selectedNodeData?.data?.length && (
 					 <div className="download-dropdown">
-					 <Button onClick={exportCSV} variant="outlet">
+					<Button onClick={exportCSV} variant="outlet">
 						Export CSV
 					</Button>
 					<Button onClick={exportJSON} variant="outlet">
 						Export JSON
 					</Button>
-				 	</div>
+				 	</div>	
 					
 				)}
 			</div>

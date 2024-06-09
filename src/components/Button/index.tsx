@@ -4,7 +4,7 @@ interface ButtonProps {
 	children: React.ReactNode;
 	variant?: 'outlet' | 'solid';
 	className?: string;
-	onClick?: () => void;
+	onClick?: (e:any) => void;
 }
 
 const Button: React.FC<ButtonProps> = ({

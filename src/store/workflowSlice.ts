@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { EdgeState } from './edgeSlice';
-import { filterData, NodeState } from './nodeSlice';
+import { processData, NodeState } from './nodeSlice';
 
 export interface TableRow {
 	[key: string]: string | number | boolean;
@@ -12,7 +12,7 @@ export interface NodeData {
 	type: string | undefined;
 	position: { x: number; y: number };
 	selectedFile: string | null;
-	filterData?: filterData;
+	filterData?: processData;
 }
 
 interface EdgeData {
@@ -114,26 +114,42 @@ const workflowSlice = createSlice({
 			state,
 			action: PayloadAction<{ id: string; name: string }>,
 		) => {
-			const workflowIndex = state.workflows.findIndex(
-				(workflow) => workflow.id === action.payload.id,
+			console.log("this is update",action.payload );
+			console.log("this is update",action.payload );
+			const { id, name } = action.payload;
+			const updatedWorkflows = state.workflows.map(workflow =>
+			  workflow.id === id ? { ...workflow, name } : workflow
 			);
-			if (workflowIndex !== -1) {
-				state.workflows[workflowIndex].name = action.payload.name;
-				localStorage.setItem(
-					`workflow-${action.payload.id}`,
-					JSON.stringify(state.workflows[workflowIndex]),
-				);
+			const workflowId = action.payload.id;
+			const workflowName = action.payload.name;
+			const workflowKey = `workflow-${workflowId}`;
+
+			const updatedLocalStorageData = {
+				...JSON.parse(localStorage.getItem(workflowKey) || '{}'),
+				name: workflowName
+			};
+			localStorage.setItem(workflowKey, JSON.stringify(updatedLocalStorageData));
+			return {
+				...state,
+				workflows:	state.workflows.map(workflow =>
+					workflow.id === id ? { ...workflow, name } : workflow
+				  )
 			}
 		},
-		deleteWorkflow: (state, action: PayloadAction<string>) => {
-			state.workflows = state.workflows.filter(
-				(workflow) => workflow.id !== action.payload,
-			);
-			localStorage.removeItem(`workflow-${action.payload}`);
-			if (state.currentWorkflowId === action.payload) {
-				state.currentWorkflowId = null;
-			}
+		deleteWorkflow: (
+			state,
+			action: PayloadAction<string>
+		) => {
+			const workflowId = action.payload;
+			const workflowKey = `workflow-${workflowId}`;
+			state.workflows = state.workflows.filter(workflow => workflow.id !== workflowId);
+			const updatedWorkflow = {
+				...state.workflows,
+			};
+			localStorage.removeItem(workflowKey);
+			
 		},
+
 	},
 });
 

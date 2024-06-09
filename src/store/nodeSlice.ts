@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NodeData, TableRow } from './workflowSlice';
 
-export interface filterData {
+export interface processData {
 	column: string;
 	condition: string;
 	value: string;
@@ -15,7 +15,7 @@ export interface NodeState {
 		position: { x: number; y: number };
 		data: TableRow[] | [];
 		selectedFile: string | null;
-		filterData?: filterData;
+		processData?: processData;
 	} | null;
 }
 

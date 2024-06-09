@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Handle, Position, useUpdateNodeInternals } from 'reactflow';
 import {
-	filterData,
+	processData,
 	removeNode,
 	setFilteredNodeData,
 	setNodeData,
@@ -45,7 +45,7 @@ const MapNode = ({ data, ...res }: any) => {
 	);
 	const nodeData = useSelector((state: RootState) => state.nodes.nodesData);
 	const currentNode = nodeData.find((node) => node.id === res.id);
-	const [filterData, setFilterData] = useState<filterData>(
+	const [filterData, setFilterData] = useState<processData>(
 		currentNode?.filterData || {
 			column: 'select column',
 			condition: 'condition',
@@ -164,7 +164,7 @@ const MapNode = ({ data, ...res }: any) => {
 	return (
 		<div className="bg-background border relative w-[200px] border-workflow-color">
 			<div className="py-2 px-3 border-b border-border-color flex items-center justify-between">
-				Filter <Button onClick={handleRemoveNode}>X</Button>
+				Map <Button onClick={handleRemoveNode}>X</Button>
 			</div>
 			<div className="py-2 flex flex-col gap-3 px-3 border-b border-border-color">
 				<div>
