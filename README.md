@@ -20,8 +20,14 @@ A React and Tailwind CSS application for building and managing workflows. Users 
 
 ## Screen-Shots
 
-[![Alt text](https://github.com/MsahilH/D-n-D-workflow-builder/blob/master/data/home.jpg)
-[![Alt text](https://github.com/MsahilH/D-n-D-workflow-builder/blob/master/data/workflow.jpg)
+[![Adding multiple entry : Create, Delete, Update, Save even after reload.](https://github.com/MsahilH/D-n-D-workflow-builder/blob/master/data/home.jpg)
+[![Multiple combination of the filter nodes to process data, Export files options, Save workflow and go to home page](https://github.com/MsahilH/D-n-D-workflow-builder/blob/master/data/workflow.jpg)
+
+To See the best verison of project, prefer to setup project in your local but for quick demo you can visit below link.
+
+## To Visit Deploy Version
+
+[Live Link : ](https://d-n-d-workflow-sahilmonparah.netlify.app/).
 
 
 ## Installation
@@ -119,15 +125,18 @@ src/
 
 We welcome contributions from the community! Here's how you can get involved:
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes.
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Open a Pull Request.
+--Fork the repository.
+--Create a new branch (git checkout -b feature-branch).
+--Make your changes.
+--Commit your changes (git commit -m 'Add new feature').
+--Push to the branch (git push origin feature-branch).
+--Open a Pull Request.
 
 
 ```bash
+git checkout -b feature-branch
+git commit -m 'Add new feature'
+git push origin feature-branch
 ```
 
 
